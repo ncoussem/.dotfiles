@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+
+if [[ $mydbg -gt 0 ]] ; then
+    echo "Loading bash_aliases"
+fi
+
+
+#
+# Directory aliases
+#
+
+alias ..="cd .."
+alias dl="cd ~/Downloads"
+alias h="history"
+
+
+# For ls
+alias ll="ls -lF"
+alias la="ls -laF"
+
+

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [[ -r ~/.bash_profile ]] && [[ -f ~/.bash_profile ]]; then
+    source ~/.bash_profile
+else
+    printf "> Cannot load .bash_profile"
+fi
