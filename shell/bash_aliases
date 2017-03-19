@@ -44,3 +44,7 @@ command -v sha1sum > /dev/null || alias sha1sum="shasum"
 # For example, to list all directories that contain a certain file:
 # find . -name .gitattributes | map dirname
 alias map="xargs -n1"
+
+
+# Reload the shell by invoking a login shell
+alias reload="exec ${SHELL} -l"
