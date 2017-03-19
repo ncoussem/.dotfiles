@@ -127,14 +127,14 @@ set_prompts() {
     if [[ "${USER}" == "root" ]]; then
         userStyle="${red}";
     else
-        userStyle="${blue}";
+        userStyle="${orange}";
     fi
 
     # connected via ssh
     if [[ "${SSH_TTY}" ]]; then
-        hostStyle="${bold}${cyan}";
+        hostStyle="${bold}${red}";
     else
-        hostStyle="${cyan}";
+        hostStyle="${yellow}";
     fi;
 
     # set the terminal title to the current working directory
