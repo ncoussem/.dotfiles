@@ -10,7 +10,7 @@ set nocompatible
 " Point to location of pathogen submodule (since it's not in .vim/autoload)
 silent! runtime bundle/vim-pathogen/autoload/pathogen.vim
 " Call pathogen plugin management
-silent! call pathogen#infect()
+ call pathogen#infect()
 
 if has("autocmd")
     " Load files for specific filetypes
@@ -26,15 +26,16 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.json set filetype=json
 endif
 
+
 if has("syntax")
     " Enable syntax highlighting
     syntax enable
     " Set 256 color terminal support
-    set t_Co=256
+    "set t_Co=256
     " Set dark background
     set background=dark
     " Set colorscheme
-    silent! colorscheme solarized
+    colorscheme solarized
 endif
 
 if has("cmdline_info")
