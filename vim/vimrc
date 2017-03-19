@@ -31,11 +31,11 @@ if has("syntax")
     " Enable syntax highlighting
     syntax enable
     " Set 256 color terminal support
-    "set t_Co=256
+    set t_Co=256
     " Set dark background
-    set background=dark
+    "set background=dark
     " Set colorscheme
-    colorscheme solarized
+    colorscheme monokai
 endif
 
 if has("cmdline_info")
