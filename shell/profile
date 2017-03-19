@@ -6,3 +6,5 @@ if [ -z $BASH_VERSION ] ; then
         exec /bin/bash
     fi
 fi
+
+source .dotfiles/shell/bash_profile
