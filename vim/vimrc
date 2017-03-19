@@ -19,7 +19,7 @@ if has("autocmd")
     filetype plugin on
 
     " Languages with specific tabs/space requirements
-    "autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
+    autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
     " Automatically strip trailing whitespace on file save
     autocmd BufWritePre *.css,*.html,*.js,*.json,*.md,*.php,*.py,*.rb,*.scss,*.sh,*.txt :call StripTrailingWhitespace()
     " Don't treat json as javascript
