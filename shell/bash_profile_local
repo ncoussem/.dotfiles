@@ -2,17 +2,21 @@
 
 
 if [[ $mydbg -gt 0 ]] ; then
-    echo "Loading bash_profile.local"
+    echo "Loading bash_profile_local"
 fi
 
 
 key=$(uname -n)
 
-case $key:
+case $key in
     chimay)
         #loading entware
         source /opt/etc/profile
+        export PATH="${HOME}/miniconda3/bin:$PATH"
+
+        ;;
     affli)
+        export PATH="${HOME}/anaconda3/bin:$PATH"
         ;;
 esac
 
