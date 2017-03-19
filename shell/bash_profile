@@ -10,14 +10,13 @@ fi
 
 load_dotfiles() {
     declare -a files=(
-        $HOME/.dotfiles/shell/bash_options # Options
-        $HOME/.dotfiles/shell/bash_exports # Exports
-        $HOME/.dotfiles/shell/bash_aliases # Aliases
-        $HOME/.dotfiles/shell/functions/* # Functions
-        $HOME/.dotfiles/shell/bash_prompt # Custom bash prompt
-        $HOME/.dotfiles/shell/bash_paths # Path modifications
-        $HOME/.dotfiles/shell/bash_profile_local # Path modifications
-        $HOME/.bash_profile.local # Local and private settings not under version control (e.g. git credentials)
+        ${HOME}/.dotfiles/shell/bash_options # Options
+        ${HOME}/.dotfiles/shell/bash_exports # Exports
+        ${HOME}/.dotfiles/shell/bash_aliases # Aliases
+        ${HOME}/.dotfiles/shell/functions/* # Functions
+        ${HOME}/.dotfiles/shell/bash_prompt # Custom bash prompt
+        ${HOME}/.dotfiles/shell/bash_paths # Path modifications
+        ${HOME}/.dotfiles/shell/bash_profile_local # Path modifications
     )
 
     # if these files are readable, source them
@@ -29,5 +28,70 @@ load_dotfiles() {
     done
 }
 
+
+
+load_colors() {
+
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+        tput sgr0; # reset colors
+        bold=$(tput bold);
+        reset=$(tput sgr0);
+        # Solarized colors, taken from http://git.io/solarized-colors.
+        black=$(tput setaf 0);
+        blue=$(tput setaf 33);
+        cyan=$(tput setaf 37);
+        green=$(tput setaf 64);
+        orange=$(tput setaf 166);
+        purple=$(tput setaf 125);
+        red=$(tput setaf 124);
+        violet=$(tput setaf 61);
+        white=$(tput setaf 15);
+        yellow=$(tput setaf 136);
+    else
+        bold='';
+        reset="\e[0m";
+        black="\e[1;30m";
+        blue="\e[1;34m";
+        cyan="\e[1;36m";
+        green="\e[1;32m";
+        orange="\e[1;33m";
+        purple="\e[1;35m";
+        red="\e[1;31m";
+        violet="\e[1;35m";
+        white="\e[1;37m";
+        yellow="\e[1;33m";
+    fi
+
+}
+
+unload_colors() {
+    unset bold reset black blue cyan green orange purple red violet white yellow
+
+
+}
+
+
+#
+# Start
+#
+
+
+# set 256 color profile where possible
+if [[ ${COLORTERM} == gnome-* && ${TERM} == xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
+    export TERM=gnome-256color
+elif infocmp xterm-256color >/dev/null 2>&1; then
+    export TERM=xterm-256color
+fi
+
+
+load_colors 
+
 load_dotfiles
+
+
+# variables cleaning
+
 unset load_dotfiles
+unset load_colors
+unload_colors 
+unset mydbg

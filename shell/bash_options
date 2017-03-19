@@ -13,9 +13,39 @@ shopt -s cdspell
 # of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# Append to the Bash history file, rather than overwriting it
-shopt -s histappend
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
+
+# Do not autocomplete when accidentally pressing Tab on an empty line. (It takes
+# forever and yields "Display all 15 gazillion possibilites?")
+shopt -s no_empty_cmd_completion
+
+# Do not overwrite files when redirecting using ">".
+# Note that you can still override this with ">|".
+set -o noclobber
+
+
+
+#
+# History configuration
+#
+# Append to the Bash history file, rather than overwriting it
+shopt -s histappend
+
+# Keep a reasonably long history.
+export HISTSIZE=4096
+
+# Ignore duplicate commands in the history
+export HISTCONTROL=ignoredups
+
+
+# Keep even more history lines inside the file, so we can still look up
+# previous commands without needlessly cluttering the current shell's history.
+export HISTFILESIZE=16384
+
+
+# Keep track of the time the commands were executed.
+# The xterm colour escapes require special care when piping; e.g. "| less -R".
+export HISTTIMEFORMAT="${blue}${bold}%Y/%m/%d %H:%M:%S${reset}  ";
 

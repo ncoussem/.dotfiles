@@ -6,19 +6,29 @@ if [[ $mydbg -gt 0 ]] ; then
 fi
 
 
-key=$(uname -n)
+key=$(uname -n | md5sum | cut -d\  -f1)
 
 case $key in
-    chimay)
+    4bb2471c6b1dcae858d5150497bb9110) #Syno
         #loading entware
         source /opt/etc/profile
+        # loading miniconda
         export PATH="${HOME}/miniconda3/bin:$PATH"
 
         ;;
-    affli)
+    58c336705cf447b0ba4d4417f969e07a) #mbp
+        #loading conda
         export PATH="${HOME}/anaconda3/bin:$PATH"
+        ;;
+    *)
+        echo "No local configuration for $(uname -n)"
         ;;
 esac
 
+unset key
 
-# loading conda
+
+if [ -f ${HOME}/.bash_profile.local ] && [ -r ${HOME}/.bash_profile.local]; then
+    echo "Loading local config (${HOME}/.bash_profile.local)"
+    source ${HOME}/.bash_profile.local # Local and private settings not under version control (e.g. git credentials)
+fi
