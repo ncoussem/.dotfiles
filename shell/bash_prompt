@@ -137,12 +137,11 @@ set_prompts() {
         hostStyle="${yellow}";
     fi;
 
-    # set the terminal title to the current working directory
     # Set the terminal title to the current working directory.
     PS1="\[\033]0;\w\007\]";
     PS1+="\[${bold}\]\n"; # newline
     PS1+="\[${userStyle}\]\u"; # username
-    PS1+="\[${white}\]@";
+    PS1+="\[${white}\] @ ";
     PS1+="\[${hostStyle}\]${cloud}\h"; # host
     PS1+="\[${white}\] in ";
     PS1+="\[${green}\]\w"; # working directory

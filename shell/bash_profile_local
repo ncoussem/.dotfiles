@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+
+if [[ $mydbg -gt 0 ]] ; then
+    echo "Loading bash_profile.local"
+fi
+
+
+host=$(uname -n)
+
+case uname -n:
+    chimay)
+        #loading entware
+        source /opt/etc/profile
+    affli)
+        ;;
+esac
+
+
+# loading conda

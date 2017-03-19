@@ -4,6 +4,11 @@ if [[ $mydbg -gt 0 ]] ; then
     echo "Loading bash_exports"
 fi
 
+
+export LANG='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'
+
+
 # Make vim the default editor
 export EDITOR="vim"
 
@@ -25,4 +30,3 @@ export MANPAGER="less -X"
 # Make new shells get the history lines from all previous
 # shells instead of the default "last window closed" history
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
-

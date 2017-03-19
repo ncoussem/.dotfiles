@@ -16,6 +16,7 @@ load_dotfiles() {
         $HOME/.dotfiles/shell/functions/* # Functions
         $HOME/.dotfiles/shell/bash_prompt # Custom bash prompt
         $HOME/.dotfiles/shell/bash_paths # Path modifications
+        $HOME/.dotfiles/shell/bash_profile_local # Path modifications
         $HOME/.bash_profile.local # Local and private settings not under version control (e.g. git credentials)
     )
 
