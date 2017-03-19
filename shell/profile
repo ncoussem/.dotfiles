@@ -1,4 +1,8 @@
+#!/usr/bin/env bash
 
-if [ $SHELL = '/bin/sh' ] && [ -f /bin/bash ] ; then
-    exec /bin/bash
+if [ -z $BASH_VERSION ] ; then
+    if [ -f /bin/bash ] && [ -x /bin/bash ] ; then
+        echo "Launching bash"
+        exec /bin/bash
+    fi
 fi

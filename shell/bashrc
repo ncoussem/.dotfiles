@@ -6,10 +6,12 @@ if [[ $mydbg -gt 0 ]] ; then
     echo "Loading .bashrc"
 fi
 
-local file="~/.dotfiles/shell/bash_profile"
+file="~/.dotfiles/shell/bash_profile"
 
-if [[ -r "$file" ]] && [[ -f "$file"]]; then
+if [[ -r "$file" ]] && [[ -f "$file"]] ; then
     source "$file"
 else
     printf "> Cannot load $file"
 fi
+
+unset file
