@@ -6,9 +6,9 @@ if [[ $mydbg -gt 0 ]] ; then
 fi
 
 
-host=$(uname -n)
+key=$(uname -n)
 
-case uname -n:
+case $key:
     chimay)
         #loading entware
         source /opt/etc/profile
