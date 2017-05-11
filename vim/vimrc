@@ -7,6 +7,17 @@
 " Disable Vi compatibility
 set nocompatible
 
+
+" Strip trailing whitespace and newlines on save
+fun! StripTrailingWhitespace()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    %s/\($\n\s*\)\+\%$//e
+    call cursor(l, c)
+endfun
+
+
 " Point to location of pathogen submodule (since it's not in .vim/autoload)
 silent! runtime bundle/vim-pathogen/autoload/pathogen.vim
 " Call pathogen plugin management
@@ -149,3 +160,5 @@ nnoremap Y y$
 if filereadable(glob("$HOME/.vimrc.local"))
     source $HOME/.vimrc.local
 endif
+
+
