@@ -2,7 +2,7 @@
 
 
 filename=bash_profile_local
-echo "$(date +"%Y%m%d %H:%M:%S");Loading $filename" >> ~/.bash_log
+echo "$(date +"%Y%m%d %H:%M:%S");$(tty);Loading $filename" >> ~/.bash_log
 
 
 
@@ -19,13 +19,10 @@ case $key in
     58c336705cf447b0ba4d4417f969e07a) #mbp
         #loading conda
         export PATH="${HOME}/anaconda3/bin:${PATH}"
-        # spark
-        export SPARK_HOME="${HOME}/dev/spark-2.1.2-SNAPSHOT-bin-hadoop2.7"
-        export PATH="${PATH}:${SPARK_HOME}/bin"
 
         ;;
     *)
-        echo "No local configuration for $(uname -n)"
+        echo "No local configuration for $(uname -n) (key: $key"
         ;;
 esac
 
@@ -33,6 +30,6 @@ unset key
 
 
 if [ -f ${HOME}/.bash_profile.local ] && [ -r ${HOME}/.bash_profile.local]; then
-    echo "Loading local config (${HOME}/.bash_profile.local)"
+    echo "$(date +"%Y%m%d %H:%M:%S");Loading local config (${HOME}/.bash_profile.local" >> ~/.bash_log
     source ${HOME}/.bash_profile.local # Local and private settings not under version control (e.g. git credentials)
 fi
