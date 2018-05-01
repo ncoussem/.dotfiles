@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 
-if [[ $mydbg -gt 0 ]] ; then
-    echo "Loading bash_options"
-fi
+filename=bash_options
+echo "$(date +"%Y%m%d %H:%M:%S");Loading $filename" >> ~/.bash_log
+
 
 
 # Autocorrect typos in path names when using `cd`

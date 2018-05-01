@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
+filename=bash_aliases
+echo "$(date +"%Y%m%d %H:%M:%S");Loading $filename" >> ~/.bash_log
 
-if [[ $mydbg -gt 0 ]] ; then
-    echo "Loading bash_aliases"
-fi
 
 
 #

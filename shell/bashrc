@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
-mydbg=1
+filename=bashrc
+echo "$(date +"%Y%m%d %H:%M:%S");Loading $filename" >> ~/.bash_log
 
-if [[ $mydbg -gt 0 ]] ; then
-    echo "Loading .bashrc"
-fi
 
 source ~/.dotfiles/shell/bash_profile
 

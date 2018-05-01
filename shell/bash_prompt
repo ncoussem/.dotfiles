@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-
-if [[ $mydbg -gt 0 ]] ; then
-    echo "Loading bash_prompt"
-fi
+filename=bash_prompt
+echo "$(date +"%Y%m%d %H:%M:%S");Loading $filename" >> ~/.bash_log
 
 
 # set 256 color profile where possible

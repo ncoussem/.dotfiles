@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-if [[ $mydbg -gt 0 ]] ; then
-    echo "Loading bash_exports"
-fi
+filename=bash_exports
+echo "$(date +"%Y%m%d %H:%M:%S");Loading $filename" >> ~/.bash_log
+
 
 
 export LANG='en_US.UTF-8'

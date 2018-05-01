@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 
-if [[ $mydbg -gt 0 ]] ; then
-    echo "Loading bash_profile_local"
-fi
+filename=bash_profile_local
+echo "$(date +"%Y%m%d %H:%M:%S");Loading $filename" >> ~/.bash_log
+
 
 
 key=$(uname -n | md5sum | cut -d\  -f1)

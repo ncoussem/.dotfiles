@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+filename=profile
+echo "$(date +"%Y%m%d %H:%M:%S");Loading $filename" >> ~/.bash_log
+
+
 if [ -z $BASH_VERSION ] ; then
     if [ -f /bin/bash ] && [ -x /bin/bash ] ; then
         echo "Launching bash"

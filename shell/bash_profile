@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
-mydbg=1
 
-if [[ $mydbg -gt 0 ]] ; then
-    echo "Loading bash_profile"
-fi
+filename=bash_profile
+echo "$(date +"%Y%m%d %H:%M:%S");Loading $filename" >> ~/.bash_log
 
 
 
@@ -66,8 +64,6 @@ load_colors() {
 
 unload_colors() {
     unset bold reset black blue cyan green orange purple red violet white yellow
-
-
 }
 
 
@@ -93,5 +89,4 @@ load_dotfiles
 
 unset load_dotfiles
 unset load_colors
-unload_colors 
-unset mydbg
+#unload_colors 
