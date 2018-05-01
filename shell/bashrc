@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 filename=bashrc
-echo "$(date +"%Y%m%d %H:%M:%S");$(tty);Loading $filename" >> ~/.bash_log
+echo "$(date +"%Y%m%d %H:%M:%S");$$;$(tty);Loading $filename" >> ~/.bash_log
 
 
 source ~/.dotfiles/shell/bash_profile

@@ -2,7 +2,7 @@
 
 
 filename=bash_profile_local
-echo "$(date +"%Y%m%d %H:%M:%S");$(tty);Loading $filename" >> ~/.bash_log
+echo "$(date +"%Y%m%d %H:%M:%S");$$;$(tty);Loading $filename" >> ~/.bash_log
 
 
 
