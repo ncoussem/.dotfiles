@@ -20,9 +20,12 @@ case $key in
         #loading conda
         export PATH="${HOME}/anaconda3/bin:${PATH}"
 
+	#wol
+	#alias wol="wakeonlan -i 192.168.76.230 00:11:32:5C:41:6F"
+
         ;;
     *)
-        echo "No local configuration for $(uname -n) (key: $key"
+        echo "No local configuration for $(uname -n) (key: $key)"
         ;;
 esac
 

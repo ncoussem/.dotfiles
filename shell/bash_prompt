@@ -101,6 +101,7 @@ set_prompts() {
     PS1+="\[${userStyle}\]\u"; # username
     PS1+="\[${white}\] @ ";
     PS1+="\[${hostStyle}\]${cloud}\h"; # host
+    PS1+="[$(ip.getmylocation country)]"
     PS1+="\[${white}\] in ";
     PS1+="\[${green}\]\w"; # working directory
     PS1+="\$(prompt_git \"${white} on ${violet}\")"; # Git repository details
