@@ -9,7 +9,7 @@ echo "$(date +"%Y%m%d %H:%M:%S");$$;$(tty);Loading $filename" >> ~/.bash_log
 key=$(uname -n | md5sum | cut -d\  -f1)
 
 case $key in
-    4bb2471c6b1dcae858d5150497bb9110) #Syno
+    4bb2471c6b1dcae858d5150497bb9110) #Syno 716
         #loading entware
         source /opt/etc/profile
         # loading miniconda
@@ -24,6 +24,10 @@ case $key in
 	#alias wol="wakeonlan -i 192.168.76.230 00:11:32:5C:41:6F"
 
         ;;
+
+    0b5fae43759f992211f7228cfe17c309) #chouffe
+
+	;;
     *)
         echo "No local configuration for $(uname -n) (key: $key)"
         ;;
